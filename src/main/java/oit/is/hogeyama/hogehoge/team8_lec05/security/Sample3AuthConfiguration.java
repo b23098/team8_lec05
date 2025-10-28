@@ -27,7 +27,7 @@ public class Sample3AuthConfiguration {
             .logoutUrl("/logout")
             .logoutSuccessUrl("/")) // ログアウト後に / にリダイレクト
         .authorizeHttpRequests(authz -> authz
-            .requestMatchers("**").authenticated() // /sample3/以下は認証済みであること
+            .requestMatchers("/sample5/**").authenticated() // /sample3/以下は認証済みであること
             .requestMatchers("/sample4/**").authenticated() // /sample4/以下は認証済みであること
             .anyRequest().permitAll()) // 上記以外は全員アクセス可能
         .csrf(csrf -> csrf
